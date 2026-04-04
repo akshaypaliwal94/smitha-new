@@ -6,9 +6,7 @@ export default function HomePage() {
   useEffect(() => {
     // Countdown timer functionality
     const updateCountdown = () => {
-      const targetDate = new Date();
-      targetDate.setDate(targetDate.getDate() + 3);
-      targetDate.setHours(19, 0, 0, 0); // 7 PM
+      const targetDate = new Date('2026-04-19T11:00:00+05:30'); // April 19, 2026, 11:00 AM IST
 
       const now = new Date().getTime();
       const distance = targetDate.getTime() - now;
@@ -754,7 +752,7 @@ body {
           <svg viewBox="0 0 18 18"><rect x="2" y="3" width="14" height="14" rx="2"/><line x1="13" y1="1" x2="13" y2="5"/><line x1="5" y1="1" x2="5" y2="5"/><line x1="2" y1="9" x2="16" y2="9"/></svg>
         </div>
         <div class="meta-label">Date</div>
-        <div class="meta-val">12th April 2026</div>
+        <div class="meta-val">19th April 2026</div>
       </div>
 
       <div class="meta-card">
@@ -788,12 +786,12 @@ body {
   <div class="price-row">
     <span class="price-original">₹999</span>
     <span class="price-badge">Today Only</span>
-    <span class="price-free">₹97</span>
+    <span class="price-free">FREE</span>
   </div>
 
   <!-- CTA BUTTON -->
   <a href="#" class="btn-cta">
-    Grab Your Seat for ₹97
+    Grab Your FREE Seat
     <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
   </a>
 
@@ -871,7 +869,7 @@ body {
 
   <!-- SECTION CTA -->
   <a href="#" class="btn-cta who-cta">
-    Reserve Your Seat — ₹97
+    Reserve Your FREE Seat
     <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
   </a>
 
@@ -1797,7 +1795,7 @@ body {
   <div class="change-inner">
 
     <!-- EYEBROW -->
-    <div class="change-eyebrow">What Will Change After 12 April</div>
+    <div class="change-eyebrow">What Will Change After 19 April</div>
 
     <!-- HEADLINE -->
     <h2 class="change-headline">
@@ -1963,12 +1961,12 @@ body {
 
     <!-- CTA STRIP -->
     <div class="change-cta-strip">
-      <p class="change-cta-label">One 3-hour session. <strong>All six outcomes. ₹97.</strong></p>
+      <p class="change-cta-label">One 3-hour session. <strong>All six outcomes. FREE.</strong></p>
       <a href="#" class="btn-cta" style="max-width:420px; background:var(--teal2);">
-        Reserve My Seat — ₹97
+        Reserve My FREE Seat
         <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
       </a>
-      <p style="font-size:12px; color:#A0B0BC; margin-top:4px;">100% Money-Back Guarantee · Zoom · 12th April · 11:00 AM IST</p>
+      <p style="font-size:12px; color:#A0B0BC; margin-top:4px;">100% Money-Back Guarantee · Zoom · 19th April · 11:00 AM IST</p>
     </div>
 
   </div>
@@ -2421,11 +2419,11 @@ body {
 
       <div class="mentor-cta-row">
         <a href="#" class="mentor-cta-btn">
-          Learn From Smitha — ₹97
+          Learn From Smitha — FREE
           <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
         </a>
         <div class="mentor-cta-note">
-          <strong>12 April · 11:00 AM IST</strong><br>
+          <strong>19 April · 11:00 AM IST</strong><br>
           Live Zoom · 3 Hours · Money-Back Guarantee
         </div>
       </div>
@@ -2705,7 +2703,7 @@ body {
         </div>
         <div class="faq-a">
           <div class="faq-a-inner">
-            The webinar is 3 hours. That's what you're registering for today. CHCP — the 8-week programme — is a separate decision you make after the webinar if it's right for you. <strong>Today's commitment is ₹97 and 3 hours on 12 April.</strong> Nothing more is asked of you right now.
+            The webinar is 3 hours. That's what you're registering for today. CHCP — the 8-week programme — is a separate decision you make after the webinar if it's right for you. <strong>Today's commitment is FREE and 3 hours on 19 April.</strong> Nothing more is asked of you right now.
           </div>
         </div>
       </div>
@@ -2750,7 +2748,7 @@ body {
         </div>
         <div class="faq-a">
           <div class="faq-a-inner">
-            Yes — briefly, at the end. The 3 hours are entirely content: Smitha walks through the full CHCP architecture, goes deep on Pillar 1 live using the Communication Flow Grid and Breakdown Mapping Audit, and previews Pillars 2 and 3. At the close, she'll share how the 8-week programme works for those who want to go further. <em>You are not paying ₹97 to sit through a pitch.</em>
+            Yes — briefly, at the end. The 3 hours are entirely content: Smitha walks through the full CHCP architecture, goes deep on Pillar 1 live using the Communication Flow Grid and Breakdown Mapping Audit, and previews Pillars 2 and 3. At the close, she'll share how the 8-week programme works for those who want to go further. <em>You are not paying anything to sit through a pitch.</em>
           </div>
         </div>
       </div>
@@ -2804,12 +2802,12 @@ body {
 
     <!-- BOTTOM CTA -->
     <div class="faq-cta-wrap">
-      <p class="faq-cta-label">Still have a question? <strong>It'll get answered in the live Q&A on 12 April.</strong></p>
+      <p class="faq-cta-label">Still have a question? <strong>It'll get answered in the live Q&A on 19 April.</strong></p>
       <a href="#" class="btn-cta" style="max-width:400px; background:var(--teal2);">
-        Reserve My Seat — ₹97
+        Reserve My FREE Seat
         <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
       </a>
-      <p style="font-size:12px; color:#A0B0BC; margin-top:2px;">100% Money-Back Guarantee · 12 April · 11:00 AM IST</p>
+      <p style="font-size:12px; color:#A0B0BC; margin-top:2px;">100% Money-Back Guarantee · 19 April · 11:00 AM IST</p>
     </div>
 
   </div>
