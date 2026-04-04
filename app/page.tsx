@@ -1,512 +1,619 @@
-"use client"
+export default function Home() {
+  return (
+    <div dangerouslySetInnerHTML={{
+      __html: `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Webinar — Smitha Chowdary Kankanala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-import { useState, useEffect } from 'react'
-
-// JSON-LD structured data for better SEO
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Master the Ward Round Method™ - Free Healthcare Webinar",
-  "description": "Join 1000+ healthcare professionals in this exclusive free webinar. Discover the Ward Round Method™ - a unique mechanism that transforms healthcare practices.",
-  "startDate": "2026-04-12T10:00:00+05:30",
-  "endDate": "2026-04-12T11:30:00+05:30",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-  "location": {
-    "@type": "VirtualLocation",
-    "url": "https://smitha-new.vercel.app"
-  },
-  "organizer": {
-    "@type": "Person",
-    "name": "Smitha Chowdary Kankanala",
-    "url": "https://smitha-new.vercel.app"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-    "validFrom": "2026-01-01"
-  },
-  "performer": {
-    "@type": "Person",
-    "name": "Smitha Chowdary Kankanala"
-  },
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Healthcare Professionals"
-  }
+:root {
+  --bg:     #0B1017;
+  --teal:   #14B87E;
+  --teal2:  #0E8A5F;
+  --text:   #FFFFFF;
+  --muted:  #8FA3B3;
+  --surface: rgba(255,255,255,0.04);
+  --border:  rgba(255,255,255,0.08);
 }
 
-export default function HomePage() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  })
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* ── RADIAL GLOWS ── */
+.glow-left {
+  position: fixed;
+  top: -100px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,184,126,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.glow-right {
+  position: fixed;
+  top: -80px;
+  right: -150px;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14,100,200,0.14) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.glow-bottom {
+  position: fixed;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,184,126,0.09) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HERO WRAPPER ── */
+.hero {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+/* ── TOP BADGE ── */
+.top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(20,184,126,0.12);
+  border: 1px solid rgba(20,184,126,0.28);
+  border-radius: 100px;
+  padding: 7px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #80EABE;
+  margin-bottom: 36px;
+  animation: fadeDown 0.5s ease both;
+}
+.top-badge .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ── HEADLINE ── */
+.headline {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(48px, 7.5vw, 108px);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  animation: fadeUp 0.5s ease both 0.1s;
+  white-space: nowrap;
+}
+.headline-accent {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(48px, 7.5vw, 108px);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+  position: relative;
+  animation: fadeUp 0.5s ease both 0.18s;
+  white-space: nowrap;
+}
+.headline-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent);
+}
+
+/* ── LAYER 2 — PAIN ── */
+.tagline-pain {
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+  max-width: 600px;
+  margin: 24px auto 10px;
+  line-height: 1.65;
+  animation: fadeUp 0.5s ease both 0.24s;
+}
+
+/* ── LAYER 3 — PROMISE ── */
+.tagline {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+  animation: fadeUp 0.5s ease both 0.28s;
+}
+.tagline em {
+  font-style: normal;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ── HOST CREDIBILITY PILL ── */
+.host-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 44px;
+  animation: fadeUp 0.5s ease both 0.32s;
+  background: rgba(255,255,255,0.03);
+}
+.host-pill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.host-pill-item:first-child {
+  border-right: 1px solid var(--border);
+}
+.host-pill-item .flag { font-size: 14px; }
+.host-pill-item strong { color: #fff; font-weight: 600; }
+
+/* ── COUNTDOWN ── */
+.countdown-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 48px;
+  animation: fadeUp 0.5s ease both 0.36s;
+}
+
+.countdown-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 14px 26px;
+  min-height: 64px;
+}
+
+.countdown-item {
+  text-align: center;
+}
+.countdown-number {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--teal);
+  margin-bottom: 2px;
+}
+.countdown-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.countdown-sep {
+  color: var(--muted);
+  font-size: 24px;
+  font-weight: 300;
+}
+
+/* ── MAIN CTA ── */
+.main-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--teal), var(--teal2));
+  color: #fff;
+  text-decoration: none;
+  padding: 18px 42px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+  animation: fadeUp 0.5s ease both 0.4s;
+  box-shadow: 0 8px 24px rgba(20,184,126,0.2);
+}
+.main-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(20,184,126,0.3);
+  filter: brightness(1.05);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .hero { padding: 40px 20px 60px; }
+  .headline, .headline-accent { font-size: 52px; white-space: normal; }
+  .host-pill { flex-direction: column; border-radius: 12px; }
+  .host-pill-item:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+  .countdown-wrap { flex-direction: column; gap: 12px; }
+  .countdown-card { min-width: 280px; }
+}
+
+/* ════════════════════════════════════════════════ */
+/* ══ EXTENDED PAGE STYLES ══ */
+/* ════════════════════════════════════════════════ */
+
+/* ── SECTIONS ── */
+.section {
+  padding: 100px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.section-white {
+  background: #fff;
+  color: #0F1F35;
+}
+
+/* ── WHO SECTION ── */
+.who-section {
+  background: #fff;
+  color: #0F1F35;
+  padding: 100px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.who-eyebrow {
+  display: inline-block;
+  background: rgba(20,184,126,0.08);
+  color: var(--teal2);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 16px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+
+.who-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.0;
+  letter-spacing: 0.02em;
+  color: #0F1F45;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.who-sub {
+  font-size: 18px;
+  font-weight: 300;
+  color: #5A6C7D;
+  max-width: 600px;
+  margin: 0 auto 56px;
+  line-height: 1.6;
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.who-card {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(20,184,126,0.1);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.who-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(20,184,126,0.12);
+  border-color: rgba(20,184,126,0.2);
+}
+
+.who-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--teal), var(--teal2));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 24px;
+}
+
+.who-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: #0F1F35;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.who-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: #5A6C7D;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.who-pain {
+  font-size: 13px;
+  font-weight: 500;
+  color: #D73027;
+  background: rgba(215,48,39,0.08);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 3px solid #D73027;
+}
+
+/* ── CTA SECTION ── */
+.cta-section {
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.cta-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.0;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.cta-sub {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* ── RESPONSIVE WHO SECTION ── */
+@media (max-width: 640px) {
+  .who-grid { grid-template-columns: 1fr; }
+  .who-headline { font-size: 36px; }
+}
+</style>
+</head>
+
+<body>
+<!-- ══════════════════════════════════════════════
+     RADIAL GLOWS
+══════════════════════════════════════════════ -->
+<div class="glow-left"></div>
+<div class="glow-right"></div>
+<div class="glow-bottom"></div>
+
+<!-- ══════════════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════════════ -->
+<section class="hero">
+
+  <!-- TOP BADGE -->
+  <div class="top-badge">
+    <span class="dot"></span>
+    For Doctors, Nurses &amp; Healthcare Leaders
+  </div>
+
+  <!-- HEADLINE -->
+  <div class="headline">Your Work Speaks For Itself —</div>
+  <span class="headline-accent">So Why Isn't Anyone Listening?</span>
+
+  <!-- LAYER 2 — PAIN -->
+  <p class="tagline-pain">
+    The escalation you couldn't de-escalate. The meeting where your idea got credited to someone else. The promotion that went to someone you trained.
+  </p>
+
+  <!-- LAYER 3 — PROMISE -->
+  <p class="tagline">
+    In 3 hours, see exactly how the CHCP system works — why communication keeps breaking down in clinical settings, and what <em>structured authority</em> actually looks like in practice.
+  </p>
+
+  <!-- HOST CREDIBILITY -->
+  <div class="host-pill">
+    <div class="host-pill-item">
+      <span class="flag">🇮🇳</span>
+      <strong>2.3M+</strong> Community
+    </div>
+    <div class="host-pill-item">
+      <span class="flag">🏆</span>
+      <strong>1000+</strong> Success Stories
+    </div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-wrap">
+    <div class="countdown-card">
+      <div class="countdown-item">
+        <span class="countdown-number" id="days">XX</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-item">
+        <span class="countdown-number" id="hours">XX</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-item">
+        <span class="countdown-number" id="minutes">XX</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-item">
+        <span class="countdown-number" id="seconds">XX</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CTA -->
+  <a href="#register" class="main-cta">Reserve Your Seat — 12 April, 10 AM IST</a>
+
+</section>
+
+<!-- ══════════════════════════════════════════════
+     WHO THIS IS FOR SECTION
+══════════════════════════════════════════════ -->
+<section class="who-section">
+
+  <p class="who-eyebrow">Who This Is For</p>
+  <h2 class="who-headline">This Is For India's Healthcare<br>Professionals Who Are Done<br>Walking On Eggshells</h2>
+  <p class="who-sub">Four roles. Four distinct daily realities. One communication gap costing all of them.</p>
+
+  <div class="who-grid">
+
+    <div class="who-card">
+      <div class="who-icon">👩‍⚕️</div>
+      <h3 class="who-title">Senior Doctors</h3>
+      <p class="who-desc">15+ years of expertise. Solid clinical judgement. But when explaining complex protocols to junior staff or difficult diagnoses to patients, the conversation breaks down.</p>
+      <div class="who-pain">"They just don't get it. How do I make them understand without micromanaging?"</div>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon">👩‍💼</div>
+      <h3 class="who-title">Nursing Leaders</h3>
+      <p class="who-desc">Managing 20+ staff across multiple shifts. Strong operational skills. But when conflicts arise between nurses, doctors, or patients, you're stuck playing mediator.</p>
+      <div class="who-pain">"I spend more time managing personalities than managing care."</div>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon">🏥</div>
+      <h3 class="who-title">Department Heads</h3>
+      <p class="who-desc">Running entire departments. Responsible for outcomes, budgets, staff. But when presenting to the board or negotiating with administration, your expertise gets questioned.</p>
+      <div class="who-pain">"They treat me like I don't understand the business side of healthcare."</div>
+    </div>
+
+    <div class="who-card">
+      <div class="who-icon">📋</div>
+      <h3 class="who-title">Healthcare Administrators</h3>
+      <p class="who-desc">Balancing quality care with operational efficiency. Managing multiple stakeholders. But when communicating policy changes to clinical staff, resistance is immediate.</p>
+      <div class="who-pain">"They think I don't understand what happens on the floor."</div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA SECTION
+══════════════════════════════════════════════ -->
+<section class="cta-section" id="register">
+  <h2 class="cta-headline">Ready To Stop Walking<br>On Eggshells?</h2>
+  <p class="cta-sub">Join 1000+ healthcare leaders who've learned to communicate with structure, clarity, and authority.</p>
+  <a href="#" class="main-cta">Reserve Your Free Seat Now</a>
+</section>
+
+<script>
+// ══════════════════════════════════════════════
+// COUNTDOWN TIMER
+// ══════════════════════════════════════════════
+
+// Set the date we're counting down to: April 12, 2026 at 10:00 AM IST
+const targetDate = new Date("Apr 12, 2026 10:00:00 GMT+0530").getTime();
+
+// Update the countdown every 1 second
+const countdownTimer = setInterval(function() {
   
-  const [isRegistered, setIsRegistered] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formErrors, setFormErrors] = useState<{[key: string]: string}>({})
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    profession: ''
-  })
-
-  useEffect(() => {
-    // Set webinar date to April 12, 2026
-    const webinarDate = new Date('2026-04-12T10:00:00').getTime()
-    
-    const updateCountdown = () => {
-      const now = new Date().getTime()
-      const distance = webinarDate - now
-      
-      if (distance > 0) {
-        setTimeLeft({
-          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((distance % (1000 * 60)) / 1000)
-        })
-      }
-    }
-
-    updateCountdown()
-    const interval = setInterval(updateCountdown, 1000)
-    
-    return () => clearInterval(interval)
-  }, [])
-
-  const validateForm = (): boolean => {
-    const errors: {[key: string]: string} = {}
-    
-    // Name validation
-    if (!formData.name.trim()) {
-      errors.name = 'Full name is required'
-    } else if (formData.name.trim().length < 2) {
-      errors.name = 'Name must be at least 2 characters'
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!formData.email.trim()) {
-      errors.email = 'Email address is required'
-    } else if (!emailRegex.test(formData.email)) {
-      errors.email = 'Please enter a valid email address'
-    }
-    
-    // Phone validation
-    const phoneRegex = /^[\+]?[1-9][\d]{9,14}$/
-    if (!formData.phone.trim()) {
-      errors.phone = 'Phone number is required'
-    } else if (!phoneRegex.test(formData.phone.replace(/\s+/g, ''))) {
-      errors.phone = 'Please enter a valid phone number'
-    }
-    
-    // Profession validation
-    if (!formData.profession) {
-      errors.profession = 'Please select your profession'
-    }
-    
-    setFormErrors(errors)
-    return Object.keys(errors).length === 0
+  // Get current date and time
+  const now = new Date().getTime();
+  
+  // Find the distance between now and the target date
+  const distance = targetDate - now;
+  
+  // Calculate days, hours, minutes and seconds
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  // Display the result in the countdown elements
+  document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+  document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+  document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+  document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+  
+  // If the countdown is over, display some text
+  if (distance < 0) {
+    clearInterval(countdownTimer);
+    document.querySelector('.countdown-card').innerHTML = '<div style="padding:20px; color:var(--teal); font-size:18px; font-weight:600;">WEBINAR IS LIVE NOW!</div>';
   }
+  
+}, 1000);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    if (!validateForm()) {
-      return
+// ══════════════════════════════════════════════
+// SMOOTH SCROLL FOR ANCHOR LINKS
+// ══════════════════════════════════════════════
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
-    
-    setIsSubmitting(true)
-    
-    try {
-      // Simulate API call - replace with actual submission logic
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      // You can add actual form submission logic here
-      // Example: await fetch('/api/register', { method: 'POST', body: JSON.stringify(formData) })
-      
-      console.log('Form submitted successfully:', formData)
-      setIsRegistered(true)
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        profession: ''
-      })
-      setFormErrors({})
-      
-    } catch (error) {
-      console.error('Form submission error:', error)
-      // Handle error - you could set an error state here
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
+  });
+});
+</script>
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-    
-    // Clear error for this field when user starts typing
-    if (formErrors[name]) {
-      setFormErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }))
-    }
-  }
-
-  return (
-    <>
-      {/* JSON-LD structured data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      
-      <main className="min-h-screen bg-dark relative overflow-hidden">
-      {/* Hero Section */}
-      <section className="hero relative min-h-screen flex items-center justify-center px-6 py-12">
-        <div className="container mx-auto max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-center lg:text-left space-y-8">
-            {/* Pre-badge */}
-            <div className="inline-block">
-              <div className="bg-gradient-to-r from-teal to-teal-600 text-white px-6 py-2 rounded-full text-sm font-medium">
-                Free Webinar — Smitha Chowdary Kankanala
-              </div>
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="font-bebas text-white text-4xl lg:text-6xl xl:text-7xl leading-tight">
-              Master the
-              <span className="block text-teal">Ward Round Method™</span>
-              for Healthcare Success
-            </h1>
-
-            {/* Subheadline */}
-            <p className="text-lg lg:text-xl text-muted leading-relaxed">
-              Discover the unique mechanism that helps healthcare professionals 
-              build thriving practices while making a real difference in patients&apos; lives.
-            </p>
-
-            {/* Trust Elements */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 text-center">
-              <div>
-                <div className="text-2xl font-bold text-white">2.3M+</div>
-                <div className="text-sm text-muted">Community Members</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-white">1000+</div>
-                <div className="text-sm text-muted">Success Stories</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-white">97%</div>
-                <div className="text-sm text-muted">Implementation Rate</div>
-              </div>
-            </div>
-
-            {/* Countdown */}
-            <div className="bg-gradient-to-r from-teal/20 to-teal-600/20 backdrop-blur-sm border border-teal/30 rounded-2xl p-6">
-              <div className="text-teal text-sm font-medium mb-3">Webinar Starts In</div>
-              <div className="grid grid-cols-4 gap-4 text-center">
-                <div>
-                  <div className="text-2xl lg:text-3xl font-bebas text-white">{timeLeft.days}</div>
-                  <div className="text-xs text-muted">Days</div>
-                </div>
-                <div>
-                  <div className="text-2xl lg:text-3xl font-bebas text-white">{timeLeft.hours}</div>
-                  <div className="text-xs text-muted">Hours</div>
-                </div>
-                <div>
-                  <div className="text-2xl lg:text-3xl font-bebas text-white">{timeLeft.minutes}</div>
-                  <div className="text-xs text-muted">Minutes</div>
-                </div>
-                <div>
-                  <div className="text-2xl lg:text-3xl font-bebas text-white">{timeLeft.seconds}</div>
-                  <div className="text-xs text-muted">Seconds</div>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <div className="pt-4">
-              <button 
-                onClick={() => document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full lg:w-auto bg-gradient-to-r from-teal to-teal-600 hover:from-teal-600 hover:to-teal text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-              >
-                Reserve Your Free Seat → April 12, 2026
-              </button>
-            </div>
-          </div>
-
-          {/* Right Content - Coach Image */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-teal/20 to-teal-600/20 backdrop-blur-sm border border-teal/30 p-8">
-              <div className="bg-teal/10 rounded-xl p-6 text-center">
-                <div className="w-32 h-32 bg-teal/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-4xl">👩‍⚕️</span>
-                </div>
-                <h3 className="text-white font-semibold text-xl mb-2">Smitha Chowdary Kankanala</h3>
-                <p className="text-muted text-sm mb-4">Healthcare Transformation Expert</p>
-                <div className="space-y-2 text-sm text-muted">
-                  <div>✓ 10+ Years Experience</div>
-                  <div>✓ Ward Round Method™ Creator</div>
-                  <div>✓ 1000+ Healthcare Professionals Trained</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Registration Section */}
-      <section id="registration" className="py-20 bg-gradient-to-b from-teal/5 to-transparent">
-        <div className="container mx-auto max-w-2xl px-6">
-          <div className="text-center mb-12">
-            <h2 className="font-bebas text-white text-3xl lg:text-5xl mb-4">
-              Reserve Your Free Seat
-            </h2>
-            <p className="text-muted text-lg">
-              Join 1000+ healthcare professionals who have transformed their practice
-            </p>
-          </div>
-
-          {!isRegistered ? (
-            <form onSubmit={handleSubmit} className="bg-gradient-to-br from-teal/10 to-teal-600/10 backdrop-blur-sm border border-teal/30 rounded-2xl p-8 space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-white text-sm font-medium mb-2">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-3 rounded-xl bg-dark/50 border text-white placeholder-muted focus:outline-none transition-colors ${
-                    formErrors.name 
-                      ? 'border-red-500 focus:border-red-500' 
-                      : 'border-teal/30 focus:border-teal'
-                  }`}
-                  placeholder="Enter your full name"
-                />
-                {formErrors.name && (
-                  <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>
-                )}
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-white text-sm font-medium mb-2">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-3 rounded-xl bg-dark/50 border text-white placeholder-muted focus:outline-none transition-colors ${
-                    formErrors.email 
-                      ? 'border-red-500 focus:border-red-500' 
-                      : 'border-teal/30 focus:border-teal'
-                  }`}
-                  placeholder="Enter your email address"
-                />
-                {formErrors.email && (
-                  <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>
-                )}
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-white text-sm font-medium mb-2">
-                  Phone Number *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-3 rounded-xl bg-dark/50 border text-white placeholder-muted focus:outline-none transition-colors ${
-                    formErrors.phone 
-                      ? 'border-red-500 focus:border-red-500' 
-                      : 'border-teal/30 focus:border-teal'
-                  }`}
-                  placeholder="Enter your phone number"
-                />
-                {formErrors.phone && (
-                  <p className="text-red-500 text-sm mt-1">{formErrors.phone}</p>
-                )}
-              </div>
-
-              <div>
-                <label htmlFor="profession" className="block text-white text-sm font-medium mb-2">
-                  Profession *
-                </label>
-                <select
-                  id="profession"
-                  name="profession"
-                  required
-                  value={formData.profession}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-3 rounded-xl bg-dark/50 border text-white focus:outline-none transition-colors ${
-                    formErrors.profession 
-                      ? 'border-red-500 focus:border-red-500' 
-                      : 'border-teal/30 focus:border-teal'
-                  }`}
-                >
-                  <option value="">Select your profession</option>
-                  <option value="doctor">Doctor</option>
-                  <option value="nurse">Nurse</option>
-                  <option value="physiotherapist">Physiotherapist</option>
-                  <option value="nutritionist">Nutritionist</option>
-                  <option value="other">Other Healthcare Professional</option>
-                </select>
-                {formErrors.profession && (
-                  <p className="text-red-500 text-sm mt-1">{formErrors.profession}</p>
-                )}
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
-                  isSubmitting
-                    ? 'bg-gray-600 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-teal to-teal-600 hover:from-teal-600 hover:to-teal text-white'
-                }`}
-              >
-                {isSubmitting ? (
-                  <>
-                    <span className="inline-block animate-spin mr-2">⏳</span>
-                    Reserving Your Seat...
-                  </>
-                ) : (
-                  'Reserve My Free Seat →'
-                )}
-              </button>
-            </form>
-          ) : (
-            <div className="bg-gradient-to-br from-green-500/10 to-green-600/10 backdrop-blur-sm border border-green-500/30 rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-green-500/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl">✓</span>
-              </div>
-              <h3 className="text-white font-semibold text-xl mb-2">Registration Confirmed!</h3>
-              <p className="text-muted">
-                Thank you for registering! You&apos;ll receive a confirmation email with the webinar details shortly.
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* What You'll Learn Section */}
-      <section className="py-20">
-        <div className="container mx-auto max-w-6xl px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-bebas text-white text-3xl lg:text-5xl mb-4">
-              What You&apos;ll Discover
-            </h2>
-            <p className="text-muted text-lg">
-              Master the Ward Round Method™ and transform your practice
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-teal/10 to-teal-600/10 backdrop-blur-sm border border-teal/30 rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-teal/20 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-2xl">🎯</span>
-              </div>
-              <h3 className="text-white font-semibold text-xl mb-4">Core Method</h3>
-              <p className="text-muted">
-                Learn the fundamental principles of the Ward Round Method™ that have helped thousands of healthcare professionals.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-teal/10 to-teal-600/10 backdrop-blur-sm border border-teal/30 rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-teal/20 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-2xl">💡</span>
-              </div>
-              <h3 className="text-white font-semibold text-xl mb-4">Implementation</h3>
-              <p className="text-muted">
-                Get step-by-step guidance on how to implement this method in your daily practice for maximum impact.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-teal/10 to-teal-600/10 backdrop-blur-sm border border-teal/30 rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-teal/20 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-2xl">📈</span>
-              </div>
-              <h3 className="text-white font-semibold text-xl mb-4">Results</h3>
-              <p className="text-muted">
-                See real case studies and results from healthcare professionals who have implemented this method.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Event Details */}
-      <section className="py-20 bg-gradient-to-b from-teal/5 to-transparent">
-        <div className="container mx-auto max-w-4xl px-6">
-          <div className="bg-gradient-to-br from-teal/10 to-teal-600/10 backdrop-blur-sm border border-teal/30 rounded-2xl p-8">
-            <div className="text-center mb-8">
-              <h2 className="font-bebas text-white text-3xl lg:text-4xl mb-4">
-                Event Details
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-teal text-sm font-medium mb-2">Date</div>
-                <div className="text-white text-xl font-semibold">April 12, 2026</div>
-              </div>
-              <div>
-                <div className="text-teal text-sm font-medium mb-2">Time</div>
-                <div className="text-white text-xl font-semibold">10:00 AM IST</div>
-              </div>
-              <div>
-                <div className="text-teal text-sm font-medium mb-2">Duration</div>
-                <div className="text-white text-xl font-semibold">90 Minutes</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-20">
-        <div className="container mx-auto max-w-4xl px-6 text-center">
-          <h2 className="font-bebas text-white text-3xl lg:text-5xl mb-6">
-            Don&apos;t Miss This Opportunity
-          </h2>
-          <p className="text-muted text-lg mb-8">
-            Join the exclusive webinar and discover how to transform your healthcare practice.
-          </p>
-          <button 
-            onClick={() => document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-gradient-to-r from-teal to-teal-600 hover:from-teal-600 hover:to-teal text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-          >
-            Reserve Your Free Seat Now →
-          </button>
-        </div>
-      </section>
-    </main>
-    </>
+</body>
+</html>`
+    }}/>
   )
 }
