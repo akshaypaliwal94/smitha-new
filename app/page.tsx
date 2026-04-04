@@ -850,8 +850,8 @@ body {
       <div class="who-card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v11"/><path d="M2 19h20"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
       </div>
-      <h3 class="who-card-title">I'm a Medical Student or Intern</h3>
-      <p class="who-card-body">You graduated with clinical skills — they didn't teach you this part. You're forming communication habits right now, and some of them will cost you later. Cohort 1 means you have the system from day one, not five years in.</p>
+      <h3 class="who-card-title">I'm a Medical Student (Clinical Years) or Intern</h3>
+      <p class="who-card-body">You're in clinical rotations now — real patient interactions every day. They taught you clinical skills but not this communication system. You're forming habits that will follow you through your entire career. Master the framework now, not five years in.</p>
     </div>
 
   </div>
@@ -859,7 +859,7 @@ body {
   <!-- EXCLUSION LINE -->
   <p class="who-exclusion">You want a motivational talk, a generic soft-skills workshop, or communication theory with no ward application — <strong>DON'T register.</strong></p>
 
-  <p class="who-but">But if you're —</p>
+  <p class="who-but">But if you want to be —</p>
 
   <!-- IDENTITY PILLS -->
   <div class="who-pills">
@@ -986,6 +986,77 @@ body {
 .cover-sub em {
   font-style: normal;
   color: rgba(255,255,255,0.7);
+}
+
+/* ── TIMELINE SECTION ── */
+.timeline-section {
+  margin: 60px auto;
+  max-width: 800px;
+}
+
+.timeline-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  color: var(--teal);
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 20px;
+  align-items: center;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.timeline-time {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  color: var(--teal);
+  text-align: center;
+  background: rgba(20,184,126,0.1);
+  border: 1px solid rgba(20,184,126,0.2);
+  border-radius: 6px;
+  padding: 8px 4px;
+}
+
+.timeline-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.timeline-content p {
+  font-size: 13px;
+  color: #6B8090;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .timeline-time {
+    justify-self: center;
+    width: 80px;
+  }
 }
 
 /* ── MODULES GRID ── */
@@ -1223,8 +1294,36 @@ body {
     </h2>
 
     <p class="cover-sub">
-      CHCP is built on 3 Pillars. In this webinar, Smitha walks you through the full architecture — going deep on Pillar 1 live, and showing exactly what Pillars 2 and 3 cover inside the programme.
+      CHCP is built on 3 Pillars. In this webinar, Smitha walks you through all three pillars of the system — giving you a comprehensive overview of the complete CHCP architecture and how each pillar works together.
     </p>
+
+    <!-- WEBINAR TIMELINE -->
+    <div class="timeline-section">
+      <h3 class="timeline-title">3-Hour Webinar Structure</h3>
+      <div class="timeline-grid">
+        <div class="timeline-item">
+          <div class="timeline-time">Hour 1</div>
+          <div class="timeline-content">
+            <h4>Pillar 1: Communication Diagnosis</h4>
+            <p>Identify where communication breaks down and why standard protocols fail</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">Hour 2</div>
+          <div class="timeline-content">
+            <h4>Pillar 2: Structured Authority Framework</h4>
+            <p>Build communication systems that work under pressure and prevent escalations</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">Hour 3</div>
+          <div class="timeline-content">
+            <h4>Pillar 3: Implementation Strategy</h4>
+            <p>Install the complete system in your daily practice with real-world applications</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- MODULES GRID: 3 × 2 -->
     <div class="modules-grid">
