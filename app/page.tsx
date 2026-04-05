@@ -45,11 +45,16 @@ export default function HomePage() {
     // Seat countdown functionality
     const updateSeatCount = () => {
       const seatElement = document.getElementById('seat-count');
+      const stickySeatElement = document.getElementById('sticky-seat-count');
       if (seatElement) {
         let currentSeats = parseInt(seatElement.textContent || '66');
         if (currentSeats > 1) {
           currentSeats -= 1;
           seatElement.textContent = currentSeats.toString();
+          // Update sticky CTA seat count too
+          if (stickySeatElement) {
+            stickySeatElement.textContent = currentSeats.toString();
+          }
         }
       }
     };
@@ -2677,6 +2682,142 @@ body {
   .faq-a-inner { padding: 0 20px 24px 44px; }
   .faq-headline { font-size: 40px; }
 }
+
+/* ══════════════════════════════════════════════
+   STICKY CTA
+══════════════════════════════════════════════ */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, rgba(11,16,23,0.95) 0%, rgba(17,27,39,0.98) 100%);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(20,184,126,0.2);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 12px 20px;
+}
+
+.sticky-cta.hidden {
+  transform: translateY(100%);
+}
+
+.sticky-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.sticky-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.sticky-cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.sticky-cta-subtitle {
+  font-size: 12px;
+  color: #8FA3B3;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.sticky-cta-subtitle #sticky-seat-count {
+  background: #E74C3C;
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin: 0 2px;
+}
+
+.sticky-cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--teal) 0%, #10D48E 100%);
+  color: #fff;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(20,184,126,0.3);
+  flex-shrink: 0;
+}
+
+.sticky-cta-btn:hover {
+  background: linear-gradient(135deg, #10D48E 0%, var(--teal) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(20,184,126,0.4);
+}
+
+.sticky-cta-btn:active {
+  transform: translateY(0);
+}
+
+.sticky-cta-btn svg {
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .sticky-cta {
+    padding: 10px 16px;
+  }
+  
+  .sticky-cta-content {
+    gap: 12px;
+  }
+  
+  .sticky-cta-title {
+    font-size: 14px;
+  }
+  
+  .sticky-cta-subtitle {
+    font-size: 11px;
+  }
+  
+  .sticky-cta-btn {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+}
+
+/* Add bottom padding to body to prevent content overlap */
+body {
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 70px;
+  }
+}
+
 </style>
 
 <!-- ══════════════════════════════════════════════
@@ -2829,6 +2970,22 @@ body {
   </div>
 </section>
 
+
+<!-- STICKY CTA -->
+<div id="sticky-cta" class="sticky-cta">
+  <div class="sticky-cta-content">
+    <div class="sticky-cta-text">
+      <span class="sticky-cta-title">FREE Healthcare Communication Webinar</span>
+      <span class="sticky-cta-subtitle">April 19 • 11:00 AM IST • Only <span id="sticky-seat-count">66</span> seats left</span>
+    </div>
+    <button class="sticky-cta-btn" onclick="document.querySelector('.btn-cta').scrollIntoView({behavior: 'smooth'})">
+      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+      Reserve FREE Seat
+    </button>
+  </div>
+</div>
 
 </body>
 </html>
