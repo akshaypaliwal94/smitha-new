@@ -1013,12 +1013,12 @@ body {
 
   <!-- LAYER 2 — PAIN -->
   <p class="tagline-pain">
-    The escalation you couldn't de-escalate. The meeting where your idea got credited to someone else. The promotion that went to someone you trained.
+    You know what to do — so why doesn't it always come through when it matters most? The decision that didn't change, even after you spoke up. The escalation you couldn't de-escalate. The promotion that went to someone you trained.
   </p>
 
   <!-- LAYER 3 — PROMISE -->
   <p class="tagline">
-    In 3 hours, see exactly how the CHCP system works — why communication keeps breaking down in clinical settings, and what <em>structured authority</em> actually looks like in practice.
+    In 3 hours, see exactly how the CHCP system works — why communication keeps breaking down in healthcare settings, and what <em>structured authority</em> actually looks like in practice.
   </p>
 
   <!-- COUNTDOWN -->
@@ -1125,7 +1125,7 @@ body {
 
   <p class="who-eyebrow">Who This Is For</p>
   <h2 class="who-headline">This Is For India's Healthcare<br>Professionals Who Are Done<br>Walking On Eggshells</h2>
-  <p class="who-sub">Four roles. Four distinct daily realities. One communication gap costing all of them.</p>
+  <p class="who-sub">Four roles. Four distinct daily realities. One corporate-level communication gap costing all of them.</p>
 
   <div class="who-grid">
 
@@ -1134,7 +1134,7 @@ body {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M9 11v3m3-3v3m3-3v3"/></svg>
       </div>
       <h3 class="who-card-title">I'm a Clinician</h3>
-      <p class="who-card-body">You're technically excellent — but nobody promoted you for that. You froze when a family raised their voice. Your seniors handle it differently, and nobody explained the structure. That ends here.</p>
+      <p class="who-card-body">You're technically excellent — but nobody promoted you for that. You froze when a family raised their voice. Your seniors handle it differently with executive-level communication skills nobody explained. That ends here.</p>
     </div>
 
     <div class="who-card">
@@ -1150,7 +1150,7 @@ body {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
       </div>
       <h3 class="who-card-title">I Work in Healthcare Management</h3>
-      <p class="who-card-body">You make the decisions — but getting buy-in is a different skill. Escalations reach HR. Your team nods in briefings and ignores the decision anyway. Communication is already failing as a system function — this shows you exactly where.</p>
+      <p class="who-card-body">You make the decisions — but getting buy-in requires corporate-level communication skills. Escalations reach HR. Your team nods in briefings and ignores the decision anyway. Communication is already failing as a system function — this shows you exactly where.</p>
     </div>
 
     <div class="who-card">
@@ -1158,7 +1158,7 @@ body {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v11"/><path d="M2 19h20"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
       </div>
       <h3 class="who-card-title">I'm a Medical Student (Clinical Years) or Intern</h3>
-      <p class="who-card-body">You're in clinical rotations now — real patient interactions every day. They taught you clinical skills but not this communication system. You're forming habits that will follow you through your entire career. Master the framework now, not five years in.</p>
+      <p class="who-card-body">You're in clinical rotations now — real patient interactions every day. They taught you healthcare skills but not this communication system. You're forming habits that will follow you through your entire career. Master the framework now, not five years in.</p>
     </div>
 
   </div>
@@ -1698,7 +1698,7 @@ body {
         </div>
         <span class="module-tag" style="background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.4); border-color:rgba(255,255,255,0.1);">CHCP Programme</span>
         <h3 class="module-title">Crisis Leadership & Institutional Communication</h3>
-        <p class="module-body">Outbreak communication, adverse events, media pressure, internal alignment. Where most institutions fail — not clinically, but communicatively. Crisis Response Architecture.</p>
+        <p class="module-body">Outbreak communication, adverse events, media pressure, internal alignment. Where most institutions fail — not healthcare-wise, but communicatively. Crisis Response Architecture.</p>
       </div>
 
     </div>
@@ -2188,7 +2188,7 @@ body {
         </div>
         <div class="ba-cell">
           <span class="ba-cell-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
-          Documented communication competence — defensible in clinical and legal contexts
+          Documented communication competence — defensible in healthcare and legal contexts
         </div>
         <div class="ba-cell" style="border-bottom:none;">
           <span class="ba-cell-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
@@ -2712,7 +2712,7 @@ body {
           When she returned to India and moved into healthcare management, she saw what that structure's absence looked like in practice — and the stakes were far higher than any corporate client. A family over-assured that nothing was wrong. A clinician who knew exactly what to do, but <em>couldn't communicate it under pressure.</em> People's health and careers on the line.
         </p>
         <p class="mentor-bio-para">
-          Two decades of evidence confirmed it: healthcare communication is a learnable clinical competency. Not a personality trait. Not something you pick up over time. <em>A system.</em> And almost nobody in India was teaching it systematically.
+          Two decades of evidence confirmed it: healthcare communication is a learnable professional competency. Not a personality trait. Not something you pick up over time. <em>A system.</em> And almost nobody in India was teaching it systematically.
         </p>
         <p class="mentor-bio-para" style="border-bottom:none;">
           She left a senior hospital role to build <em>CHCP</em>. Eight weeks. Portfolio-based. Simulation-assessed. Not a workshop that gives awareness. Not a course that gives knowledge. A programme that delivers documented, applied competency — the kind that follows you through every role, for the rest of your career.
@@ -3469,7 +3469,7 @@ body {
         </div>
         <div class="faq-a">
           <div class="faq-a-inner">
-            The webinar itself does not carry a certificate. The full CHCP programme is portfolio-assessed — your documentation of simulations across all 8 weeks is the credential. <strong>The goal is demonstrated competency across real scenarios, not a certificate that sits in a drawer.</strong> Participants graduate with a documented body of applied work covering clinical escalation, consent conversations, hierarchy navigation, documentation integrity, and crisis communication. Cohort 1 graduates will be the first professionals in India to hold this specific certification.
+            The webinar itself does not carry a certificate. The full CHCP programme is portfolio-assessed — your documentation of simulations across all 8 weeks is the credential. <strong>The goal is demonstrated competency across real scenarios, not a certificate that sits in a drawer.</strong> Participants graduate with a documented body of applied work covering healthcare escalation, consent conversations, hierarchy navigation, documentation integrity, and crisis communication. Cohort 1 graduates will be the first professionals in India to hold this specific certification.
           </div>
         </div>
       </div>
@@ -3499,7 +3499,7 @@ body {
         </div>
         <div class="faq-a">
           <div class="faq-a-inner">
-            The system is built around four roles: <em>Clinicians, Nurses &amp; Allied Health, Healthcare Management, and Medical Students &amp; Interns</em>. Each module is illustrated with scenarios specific to each role. If you interact with patients, families, seniors, or teams in a clinical environment — this is built for you.
+            The system is built around four roles: <em>Clinicians, Nurses &amp; Allied Health, Healthcare Management, and Medical Students &amp; Interns</em>. Each module is illustrated with scenarios specific to each role. If you interact with patients, families, seniors, or teams in a healthcare environment — this is built for you.
           </div>
         </div>
       </div>
@@ -3529,7 +3529,7 @@ body {
         </div>
         <div class="faq-a">
           <div class="faq-a-inner">
-            Most offerings are one-day workshops or conference panels that teach <em>awareness</em> — what good communication looks like in theory. CHCP teaches <em>competency</em> — structured frameworks applied to real Indian clinical scenarios, assessed by portfolio and live simulation. The curriculum covers 8 distinct layers: clinical escalation, nurse-physician interaction, cross-department coordination, documentation integrity, consent disclosure, hierarchy navigation, crisis messaging, and legal defensibility. <strong>It's the difference between a CPR awareness talk and getting certified in CPR.</strong> The awareness talks exist. This is not that.
+            Most offerings are one-day workshops or conference panels that teach <em>awareness</em> — what good communication looks like in theory. CHCP teaches <em>competency</em> — structured frameworks applied to real Indian healthcare scenarios, assessed by portfolio and live simulation. The curriculum covers 8 distinct layers: healthcare escalation, nurse-physician interaction, cross-department coordination, documentation integrity, consent disclosure, hierarchy navigation, crisis messaging, and legal defensibility. <strong>It's the difference between a CPR awareness talk and getting certified in CPR.</strong> The awareness talks exist. This is not that.
           </div>
         </div>
       </div>
