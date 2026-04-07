@@ -1023,7 +1023,7 @@ body {
 
   <!-- LAYER 3 — PROMISE -->
   <p class="tagline">
-    In 3 hours, experience how the CHCP (Certified Healthcare Communication Professional) system works from the Center for Healthcare Communication Practice—why communication fails even among skilled healthcare professionals, how it breaks with patients and between teams, and how to navigate hierarchy, escalation, and ownership with clarity when it matters most.
+    In 3 hours, experience how the CHCP system works—why communication fails even among skilled healthcare professionals, how it breaks with patients and between teams, and how to navigate hierarchy, escalation, and ownership with clarity when it matters most.
   </p>
 
   <!-- COUNTDOWN -->
