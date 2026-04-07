@@ -459,40 +459,18 @@ body {
 /* ── HEADLINE ── */
 .headline {
   font-family: 'Bebas Neue', Impact, sans-serif;
-  font-size: clamp(42px, 7vw, 96px);
-  line-height: 1.0;
+  font-size: clamp(36px, 6.5vw, 88px);
+  line-height: 1.05;
   letter-spacing: 0.01em;
   color: #fff;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
   animation: fadeUp 0.5s ease both 0.1s;
   white-space: normal;
   max-width: 100%;
 }
-.headline-accent {
-  font-family: 'Bebas Neue', Impact, sans-serif;
-  font-size: clamp(42px, 7vw, 96px);
-  line-height: 1.0;
-  letter-spacing: 0.01em;
-  color: var(--teal);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  display: block;
-  position: relative;
-  animation: fadeUp 0.5s ease both 0.18s;
-  white-space: normal;
-  max-width: 100%;
-}
-.headline-accent::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--teal), transparent);
-}
+/* Removed .headline-accent since headline is now unified */
+/* Removed ::after since headline is now unified */
 
 /* ── LAYER 2 — PAIN ── */
 .tagline-pain {
@@ -983,8 +961,7 @@ body {
   .who-headline { font-size: 36px; }
   .event-card-row { grid-template-columns: 1fr; }
   .event-image-card { grid-column: 1; min-height: 160px; }
-  .headline { font-size: 44px; line-height: 1.1; }
-  .headline-accent { font-size: 44px; line-height: 1.1; }
+  .headline { font-size: 32px; line-height: 1.15; }
   .host-pill { flex-direction: column; border-radius: 12px; }
   .host-pill-item:first-child { border-right: none; border-bottom: 1px solid var(--border); }
 }
@@ -1010,8 +987,7 @@ body {
   </div>
 
   <!-- HEADLINE -->
-  <div class="headline">You know what to do —<br>so why doesn't it always come through</div>
-  <span class="headline-accent">when it matters most?</span>
+  <div class="headline">You know what to do — so why doesn't it<br>always come through when it matters most?</div>
 
   <!-- LAYER 2 — PAIN -->
   <p class="tagline-pain">
