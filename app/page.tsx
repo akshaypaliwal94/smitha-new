@@ -459,27 +459,29 @@ body {
 /* ── HEADLINE ── */
 .headline {
   font-family: 'Bebas Neue', Impact, sans-serif;
-  font-size: clamp(48px, 7.5vw, 108px);
-  line-height: 0.95;
+  font-size: clamp(42px, 7vw, 96px);
+  line-height: 1.0;
   letter-spacing: 0.01em;
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 4px;
   animation: fadeUp 0.5s ease both 0.1s;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 100%;
 }
 .headline-accent {
   font-family: 'Bebas Neue', Impact, sans-serif;
-  font-size: clamp(48px, 7.5vw, 108px);
-  line-height: 0.95;
+  font-size: clamp(42px, 7vw, 96px);
+  line-height: 1.0;
   letter-spacing: 0.01em;
   color: var(--teal);
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
   display: block;
   position: relative;
   animation: fadeUp 0.5s ease both 0.18s;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 100%;
 }
 .headline-accent::after {
   content: '';
@@ -981,8 +983,8 @@ body {
   .who-headline { font-size: 36px; }
   .event-card-row { grid-template-columns: 1fr; }
   .event-image-card { grid-column: 1; min-height: 160px; }
-  .headline { font-size: 52px; white-space: normal; }
-  .headline-accent { font-size: 52px; white-space: normal; }
+  .headline { font-size: 44px; line-height: 1.1; }
+  .headline-accent { font-size: 44px; line-height: 1.1; }
   .host-pill { flex-direction: column; border-radius: 12px; }
   .host-pill-item:first-child { border-right: none; border-bottom: 1px solid var(--border); }
 }
@@ -1008,8 +1010,8 @@ body {
   </div>
 
   <!-- HEADLINE -->
-  <div class="headline">You know what to do —</div>
-  <span class="headline-accent">so why doesn't it always come through when it matters most?</span>
+  <div class="headline">You know what to do —<br>so why doesn't it always come through</div>
+  <span class="headline-accent">when it matters most?</span>
 
   <!-- LAYER 2 — PAIN -->
   <p class="tagline-pain">
