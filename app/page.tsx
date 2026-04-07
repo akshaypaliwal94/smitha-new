@@ -1008,12 +1008,11 @@ body {
   </div>
 
   <!-- HEADLINE -->
-  <div class="headline">Your Work Speaks For Itself —</div>
-  <span class="headline-accent">So Why Isn't Anyone Listening?</span>
+  <div class="headline">You know what to do —</div>
+  <span class="headline-accent">so why doesn't it always come through when it matters most?</span>
 
   <!-- LAYER 2 — PAIN -->
   <p class="tagline-pain">
-    You know what to do — so why doesn't it always come through when it matters most?<br><br>
     The moment you walked out thinking, "I should have said that differently."<br>
     The patient you were worried about—but couldn't quite push hard enough.<br>
     The decision that didn't change, even after you spoke up.
