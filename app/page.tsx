@@ -3459,7 +3459,7 @@ body {
         </div>
         <div class="faq-a">
           <div class="faq-a-inner">
-            All registered attendees receive a recording. That said — the live Q&A at the end is where Smitha works through <em>real scenarios submitted by attendees</em>. That part doesn't replay the same way. If you can be there live, be there live.
+            All registered attendees receive a recording. That said — get your questions answered live with her at the end. That part doesn't replay the same way. If you can be there live, be there live.
           </div>
         </div>
       </div>
