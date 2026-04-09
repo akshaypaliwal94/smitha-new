@@ -1069,7 +1069,7 @@ body {
 
     <!-- Image / Branding Card -->
     <div class="event-image-card" style="padding:0;">
-      <img src="/thumbnail.png" alt="Healthcare Communication Masterclass — CHCP by Smitha Kankanala" style="width:100%; height:auto; display:block; border-radius:10px;">
+      <img src="/thumbnail_2.png" alt="Healthcare Communication Masterclass — CHCP by Smitha Kankanala" style="width:100%; height:auto; display:block; border-radius:10px;">
     </div>
 
     <!-- Meta Grid -->
