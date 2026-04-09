@@ -6,7 +6,7 @@ export default function HomePage() {
   useEffect(() => {
     // Countdown timer functionality
     const updateCountdown = () => {
-      const targetDate = new Date('2026-04-19T11:00:00+05:30'); // April 19, 2026, 11:00 AM IST
+      const targetDate = new Date('2026-04-19T15:00:00+05:30'); // April 19, 2026, 3:00 PM IST
 
       const now = new Date().getTime();
       const distance = targetDate.getTime() - now;
@@ -54,6 +54,15 @@ export default function HomePage() {
           }
         }
       }
+    };
+
+    // Capture UTM parameters from URL on page load
+    const urlParams = new URLSearchParams(window.location.search);
+    (window as any)._utmParams = {
+      utm_source:  urlParams.get('utm_source')  || '',
+      utm_content: urlParams.get('utm_content') || '',
+      utm_term:    urlParams.get('utm_term')    || '',
+      fbclid:      urlParams.get('fbclid')      || '',
     };
 
     // Popup functionality
@@ -141,8 +150,30 @@ export default function HomePage() {
         return;
       }
 
-      // Here you would normally send data to your backend
-      console.log('Registration data:', data);
+      // Collect UTM params captured on page load
+      const utm = (window as any)._utmParams || {};
+
+      // Build payload for Pabbly webhook
+      const payload = {
+        full_name:   data.fullName,
+        email:       data.email,
+        whatsapp:    data.whatsapp,
+        role:        data.role,
+        utm_source:  utm.utm_source,
+        utm_content: utm.utm_content,
+        utm_term:    utm.utm_term,
+        fbclid:      utm.fbclid,
+        page_url:    window.location.href,
+        timestamp:   new Date().toISOString(),
+      };
+
+      // Fire webhook — keepalive:true ensures the request survives the page navigation
+      fetch('https://connect.pabbly.com/webhook-listener/webhook/IjU3NjIwNTZhMDYzMzA0MzA1MjZiNTUzNiI_3D_pc/IjU3NjcwNTZmMDYzZTA0MzE1MjY5NTUzNzUxM2Ii_pc', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      }).catch(() => { /* webhook failure must never block the user */ });
 
       // Redirect to thank-you page
       window.location.href = '/thank-you';
@@ -789,9 +820,8 @@ body {
 .guarantee svg { width: 14px; height: 14px; stroke: var(--teal); fill: none; stroke-width: 2; }
 
 .scarcity {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
   margin-top: 12px;
   font-size: 13px;
@@ -1060,7 +1090,7 @@ body {
           <svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="7"/><polyline points="9,5 9,9 12,11.5"/></svg>
         </div>
         <div class="meta-label">Time</div>
-        <div class="meta-val">11:00 AM IST</div>
+        <div class="meta-val">3:00 PM IST</div>
       </div>
 
       <div class="meta-card">
@@ -1095,6 +1125,11 @@ body {
     <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
   </a>
 
+  <!-- GUARANTEE -->
+  <div class="guarantee">
+    <svg viewBox="0 0 14 14"><path d="M7 1l1.4 2.9 3.1.5-2.3 2.2.5 3.2L7 8.2 4.3 9.8l.5-3.2L2.5 4.4l3.1-.5L7 1z"/></svg>
+    100% Money-Back Guarantee — Zero Risk
+  </div>
 
   <!-- SCARCITY -->
   <div class="scarcity">
@@ -1128,7 +1163,7 @@ body {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><circle cx="17" cy="8" r="2.5"/><path d="M17 11v2"/><path d="M17 15v.5"/></svg>
       </div>
       <h3 class="who-card-title">I'm a Nurse or Allied Health Professional</h3>
-      <p class="who-card-body">You're first at the bedside and last in the briefing. Families find you before the consultant does. You manage the authority gradient with doctors every single shift — without a framework for either. Healthcare training never covered this.</p>
+      <p class="who-card-body">You're first at the bedside and last in the briefing. Families find you before the consultant does. You manage the authority gradient with doctors every single shift — without a framework for either. Clinical training never covered this.</p>
     </div>
 
     <div class="who-card">
@@ -1144,7 +1179,7 @@ body {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v11"/><path d="M2 19h20"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
       </div>
       <h3 class="who-card-title">I'm a Medical Student (Clinical Years) or Intern</h3>
-      <p class="who-card-body">You're in healthcare rotations now — real patient interactions every day. They taught you healthcare skills but not this communication system. You're forming habits that will follow you through your entire career. Master the framework now, not five years in.</p>
+      <p class="who-card-body">You're in clinical rotations now — real patient interactions every day. They taught you healthcare skills but not this communication system. You're forming habits that will follow you through your entire career. Master the framework now, not five years in.</p>
     </div>
 
   </div>
@@ -1630,7 +1665,7 @@ body {
               <li>Diagnose where communication is silently breaking using the Communication Flow Grid</li>
               <li>Map interpretation, escalation, and accountability gaps in your own workplace</li>
               <li>Build closed-loop reliability in high-risk transitions: handovers, missed escalations, ICU moments</li>
-              <li>Identify breakdowns before they become complaints or healthcare errors</li>
+              <li>Identify breakdowns before they become complaints or clinical errors</li>
             </ul>
           </div>
         </div>
@@ -2236,7 +2271,7 @@ body {
         Reserve My FREE Seat
         <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
       </a>
-      <p style="font-size:12px; color:#A0B0BC; margin-top:4px;">Live Zoom · 19th April · 11:00 AM IST</p>
+      <p style="font-size:12px; color:#A0B0BC; margin-top:4px;">100% Money-Back Guarantee · Zoom · 19th April · 3:00 PM IST</p>
     </div>
 
   </div>
@@ -2798,8 +2833,8 @@ body {
           <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
         </a>
         <div class="mentor-cta-note">
-          <strong>19 April · 11:00 AM IST</strong><br>
-          Live Zoom · 3 Hours · FREE
+          <strong>19 April · 3:00 PM IST</strong><br>
+          Live Zoom · 3 Hours · Money-Back Guarantee
         </div>
       </div>
 
@@ -3945,7 +3980,7 @@ body {
         Reserve My FREE Seat
         <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
       </a>
-      <p style="font-size:12px; color:#A0B0BC; margin-top:2px;">FREE Webinar · 19 April · 11:00 AM IST</p>
+      <p style="font-size:12px; color:#A0B0BC; margin-top:2px;">100% Money-Back Guarantee · 19 April · 3:00 PM IST</p>
     </div>
 
   </div>
@@ -3957,7 +3992,7 @@ body {
   <div class="popup-container">
     <div class="popup-header">
       <h2 class="popup-title">Reserve Your FREE Seat</h2>
-      <p class="popup-subtitle">Healthcare Communication Webinar • April 19 • 11:00 AM IST</p>
+      <p class="popup-subtitle">Healthcare Communication Webinar • April 19 • 3:00 PM IST</p>
       <button class="popup-close" onclick="closePopup()">&times;</button>
     </div>
     
@@ -4017,7 +4052,7 @@ body {
   <div class="sticky-cta-content">
     <div class="sticky-cta-text">
       <span class="sticky-cta-title">FREE Healthcare Communication Webinar</span>
-      <span class="sticky-cta-subtitle">April 19 • 11:00 AM IST • Only <span id="sticky-seat-count">66</span> seats left</span>
+      <span class="sticky-cta-subtitle">April 19 • 3:00 PM IST • Only <span id="sticky-seat-count">66</span> seats left</span>
     </div>
     <button class="sticky-cta-btn" onclick="openPopup()">
       <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5">

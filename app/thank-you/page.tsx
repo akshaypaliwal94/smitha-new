@@ -41,12 +41,12 @@ export default function ThankYouPage() {
         </p>
 
         <div className={`${s.eventBadge} ${s.reveal}`}>
-          <span>📅</span> 19th April 2026 · <span>11:00 AM IST · Live Zoom</span>
+          <span>📅</span> 19th April 2026 · <span>3:00 PM IST · Live Zoom</span>
         </div>
 
         <p className={`${s.oneStep} ${s.reveal}`}>One last step — join the community:</p>
 
-        <a href="#whatsapp-placeholder" className={`${s.btnWa} ${s.reveal}`}>
+        <a href="https://chat.whatsapp.com/EIvTt0urmp0G7I2s02YRjB" className={`${s.btnWa} ${s.reveal}`}>
           <WhatsAppIcon />
           Click Here to Join Our WhatsApp Community →
         </a>
@@ -69,7 +69,7 @@ export default function ThankYouPage() {
             <div className={s.stepNumber}>2</div>
             <div className={s.stepTitle}>Save the Date</div>
             <p className={s.stepBody}>
-              Block April 19 at 11:00 AM IST on your calendar right now. This is a live session — there is no recording.
+              Block April 19 at 3:00 PM IST on your calendar right now. This is a live session — there is no recording.
             </p>
           </div>
           <div className={`${s.stepCard} ${s.reveal}`}>
@@ -90,7 +90,7 @@ export default function ThankYouPage() {
           <p className={s.bannerBody}>
             Get session reminders, pre-masterclass reading, and healthcare communication insights — this is where Smitha shares things she doesn&apos;t post publicly.
           </p>
-          <a href="#whatsapp-placeholder" className={s.btnWa}>
+          <a href="https://chat.whatsapp.com/EIvTt0urmp0G7I2s02YRjB" className={s.btnWa}>
             <WhatsAppIcon />
             Join the WhatsApp Community →
           </a>
