@@ -789,8 +789,9 @@ body {
 .guarantee svg { width: 14px; height: 14px; stroke: var(--teal); fill: none; stroke-width: 2; }
 
 .scarcity {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   margin-top: 12px;
   font-size: 13px;
