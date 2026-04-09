@@ -1,0 +1,550 @@
+.page {
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  background: #0B1017;
+  color: #FFFFFF;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── HERO ── */
+.hero {
+  background: #0B1017;
+  padding: 64px 24px 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(20, 184, 126, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.logoWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.checkmark {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #14B87E, #0E8A5F);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  box-shadow: 0 0 40px rgba(20, 184, 126, 0.35);
+}
+.checkmark svg {
+  width: 40px;
+  height: 40px;
+  stroke: white;
+  stroke-width: 3;
+  fill: none;
+}
+
+.heroTitle {
+  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(52px, 10vw, 80px);
+  line-height: 1;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.heroSub {
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-weight: 400;
+  color: #8FA3B3;
+  max-width: 560px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+.eventBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(20, 184, 126, 0.12);
+  border: 1px solid rgba(20, 184, 126, 0.3);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #14B87E;
+  letter-spacing: 0.04em;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.eventBadge span {
+  color: #8FA3B3;
+  font-weight: 400;
+}
+
+.oneStep {
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8FA3B3;
+  margin-bottom: 14px;
+}
+
+.btnWa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #14B87E, #0E8A5F);
+  color: white;
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 17px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 8px 32px rgba(20, 184, 126, 0.3);
+  border: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  max-width: 100%;
+  width: auto;
+  text-align: center;
+  word-break: break-word;
+}
+.btnWa:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+.btnWa:active {
+  transform: translateY(0);
+  opacity: 0.95;
+}
+
+.btnHint {
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  font-size: 12px;
+  color: #8FA3B3;
+  margin-top: 10px;
+}
+
+/* ── WHAT HAPPENS NEXT ── */
+.stepsSection {
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 72px 24px;
+}
+
+.sectionLabel {
+  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: #14B87E;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(32px, 6vw, 48px);
+  text-align: center;
+  margin-bottom: 48px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stepCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 28px 24px;
+}
+
+.stepNumber {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #14B87E, #0E8A5F);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.stepTitle {
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.stepBody {
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  font-size: 14px;
+  color: #8FA3B3;
+  line-height: 1.6;
+}
+
+/* ── COMMUNITY BANNER ── */
+.banner {
+  padding: 72px 24px;
+  text-align: center;
+}
+
+.bannerBox {
+  max-width: 680px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(20, 184, 126, 0.1), rgba(14, 138, 95, 0.06));
+  border: 1px solid rgba(20, 184, 126, 0.25);
+  border-radius: 16px;
+  padding: 48px 36px;
+}
+
+.bannerIcon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.bannerTitle {
+  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.bannerBody {
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  font-size: 15px;
+  color: #8FA3B3;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── FOOTER ── */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 28px 24px;
+  text-align: center;
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+  font-size: 13px;
+  color: #8FA3B3;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤768px)
+   ════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero {
+    padding: 48px 20px 56px;
+  }
+
+  .checkmark {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 22px;
+  }
+  .checkmark svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .heroSub {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  .eventBadge {
+    font-size: 13px;
+    padding: 7px 16px;
+    margin-bottom: 28px;
+  }
+
+  .btnWa {
+    font-size: 16px;
+    padding: 16px 28px;
+  }
+
+  .stepsSection {
+    padding: 56px 20px;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    max-width: 540px;
+  }
+
+  .banner {
+    padding: 56px 20px;
+  }
+
+  .bannerBox {
+    padding: 40px 28px;
+  }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — PHONE (≤640px)
+   ════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .hero {
+    padding: 40px 16px 48px;
+  }
+
+  .logoWrap {
+    margin-bottom: 24px;
+  }
+
+  .checkmark {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  .checkmark svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .heroTitle {
+    font-size: clamp(44px, 12vw, 64px);
+    margin-bottom: 12px;
+  }
+
+  .heroSub {
+    font-size: 16px;
+    margin-bottom: 22px;
+  }
+
+  .eventBadge {
+    font-size: 12px;
+    padding: 7px 14px;
+    gap: 6px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .oneStep {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .btnWa {
+    font-size: 15px;
+    padding: 15px 22px;
+    gap: 8px;
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .btnHint {
+    font-size: 11px;
+  }
+
+  .stepsSection {
+    padding: 48px 16px;
+  }
+
+  .sectionTitle {
+    font-size: clamp(28px, 7vw, 38px);
+    margin-bottom: 32px;
+  }
+
+  .stepsGrid {
+    gap: 16px;
+  }
+
+  .stepCard {
+    padding: 22px 18px;
+  }
+
+  .stepTitle {
+    font-size: 15px;
+  }
+
+  .stepBody {
+    font-size: 13.5px;
+  }
+
+  .banner {
+    padding: 48px 16px;
+  }
+
+  .bannerBox {
+    padding: 32px 20px;
+    border-radius: 12px;
+  }
+
+  .bannerTitle {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+
+  .bannerBody {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .bannerIcon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .footer {
+    padding: 24px 16px;
+    font-size: 12px;
+  }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — SMALL PHONE (≤480px)
+   ════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero {
+    padding: 32px 14px 40px;
+  }
+
+  .heroTitle {
+    font-size: clamp(40px, 13vw, 56px);
+  }
+
+  .heroSub {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .eventBadge {
+    font-size: 11.5px;
+    padding: 6px 12px;
+  }
+
+  .btnWa {
+    font-size: 14px;
+    padding: 14px 18px;
+    max-width: 100%;
+  }
+
+  .stepsSection {
+    padding: 40px 14px;
+  }
+
+  .stepCard {
+    padding: 20px 16px;
+  }
+
+  .stepNumber {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .banner {
+    padding: 40px 14px;
+  }
+
+  .bannerBox {
+    padding: 28px 16px;
+  }
+
+  .bannerTitle {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .bannerBody {
+    font-size: 13.5px;
+  }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — VERY SMALL (≤360px)
+   ════════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .hero {
+    padding: 28px 12px 36px;
+  }
+
+  .heroTitle {
+    font-size: 38px;
+  }
+
+  .heroSub {
+    font-size: 14px;
+  }
+
+  .btnWa {
+    font-size: 13.5px;
+    padding: 13px 16px;
+  }
+
+  .eventBadge {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .bannerBox {
+    padding: 24px 14px;
+  }
+
+  .bannerTitle {
+    font-size: 22px;
+  }
+}
+
+/* ════════════════════════════════════════════
+   iOS SAFARI FIXES
+   ════════════════════════════════════════════ */
+@supports (-webkit-touch-callout: none) {
+  .btnWa {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(20, 184, 126, 0.2);
+  }
+
+  /* Account for iPhone home bar */
+  .footer {
+    padding-bottom: calc(28px + env(safe-area-inset-bottom));
+  }
+}
