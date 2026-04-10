@@ -2791,7 +2791,7 @@ body {
         <div class="mentor-moment">
           <div class="mentor-moment-num">01</div>
           <div class="mentor-moment-body">
-            <strong>A decade in London.</strong> British Telecom. Marks &amp; Spencer Finance. High-stakes client conversations, daily. That&apos;s where she first saw it: structure determines outcome — every single time.
+            <strong>A decade in UK.</strong> British Telecom. Marks &amp; Spencer Finance. High-stakes client conversations, daily. That&apos;s where she first saw it: structure determines outcome — every single time.
           </div>
         </div>
         <div class="mentor-moment">
