@@ -714,10 +714,10 @@ body {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 16px;
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
 }
 
