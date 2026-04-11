@@ -173,6 +173,9 @@ export default function HomePage() {
         keepalive: true,
       }).catch(() => { /* webhook failure must never block the user */ });
 
+      // Signal Lead to Meta Pixel before navigating away
+      if ((window as any).fbq) (window as any).fbq('track', 'Lead');
+
       // Redirect to thank-you page
       window.location.href = '/thank-you';
     };

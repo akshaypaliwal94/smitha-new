@@ -6,6 +6,11 @@ import s from './thank-you.module.css';
 
 export default function ThankYouPage() {
   useEffect(() => {
+    // Fire Lead conversion event — landing here = confirmed registration
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead');
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -46,7 +51,11 @@ export default function ThankYouPage() {
 
         <p className={`${s.oneStep} ${s.reveal}`}>One last step — join the community:</p>
 
-        <a href="https://chat.whatsapp.com/EIvTt0urmp0G7I2s02YRjB" className={`${s.btnWa} ${s.reveal}`}>
+        <a
+          href="https://chat.whatsapp.com/EIvTt0urmp0G7I2s02YRjB"
+          className={`${s.btnWa} ${s.reveal}`}
+          onClick={() => { if ((window as any).fbq) (window as any).fbq('trackCustom', 'WhatsAppCommunityJoin'); }}
+        >
           <WhatsAppIcon />
           Click Here to Join Our WhatsApp Community →
         </a>
@@ -90,7 +99,11 @@ export default function ThankYouPage() {
           <p className={s.bannerBody}>
             Get session reminders, pre-masterclass reading, and healthcare communication insights — this is where Smitha shares things she doesn&apos;t post publicly.
           </p>
-          <a href="https://chat.whatsapp.com/EIvTt0urmp0G7I2s02YRjB" className={s.btnWa}>
+          <a
+            href="https://chat.whatsapp.com/EIvTt0urmp0G7I2s02YRjB"
+            className={s.btnWa}
+            onClick={() => { if ((window as any).fbq) (window as any).fbq('trackCustom', 'WhatsAppCommunityJoin'); }}
+          >
             <WhatsAppIcon />
             Join the WhatsApp Community →
           </a>
