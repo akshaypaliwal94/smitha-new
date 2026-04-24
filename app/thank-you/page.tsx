@@ -52,7 +52,7 @@ export default function ThankYouPage() {
         <p className={`${s.oneStep} ${s.reveal}`}>One last step — join the community:</p>
 
         <a
-          href="https://chat.whatsapp.com/EIvTt0urmp0G7I2s02YRjB"
+          href="https://chat.whatsapp.com/Cns7wRnsQi12XX2ZesaDqg"
           className={`${s.btnWa} ${s.reveal}`}
           onClick={() => { if ((window as any).fbq) (window as any).fbq('trackCustom', 'WhatsAppCommunityJoin'); }}
         >
@@ -100,7 +100,7 @@ export default function ThankYouPage() {
             Get session reminders, pre-masterclass reading, and healthcare communication insights — this is where Smitha shares things she doesn&apos;t post publicly.
           </p>
           <a
-            href="https://chat.whatsapp.com/EIvTt0urmp0G7I2s02YRjB"
+            href="https://chat.whatsapp.com/Cns7wRnsQi12XX2ZesaDqg"
             className={s.btnWa}
             onClick={() => { if ((window as any).fbq) (window as any).fbq('trackCustom', 'WhatsAppCommunityJoin'); }}
           >
