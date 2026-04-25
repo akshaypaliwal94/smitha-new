@@ -108,15 +108,12 @@ export default function HomePage() {
 
       let hasErrors = false;
 
-      // Validate Full Name (minimum 2 words)
-      if (!data.fullName || data.fullName.length < 2) {
-        showFieldError('fullName', 'Please enter your full name');
+      // Validate Full Name (at least one character required)
+      if (!data.fullName) {
+        showFieldError('fullName', 'Please enter your first and last name');
         hasErrors = true;
       } else if (!/^[a-zA-Z\s]+$/.test(data.fullName)) {
         showFieldError('fullName', 'Name should only contain letters and spaces');
-        hasErrors = true;
-      } else if (data.fullName.split(' ').filter(name => name.length > 0).length < 2) {
-        showFieldError('fullName', 'Please enter your first and last name');
         hasErrors = true;
       }
 
@@ -246,10 +243,10 @@ export default function HomePage() {
       
       switch (fieldName) {
         case 'fullName':
-          if (value.length === 0) return; // Don't show error for empty field initially
+          if (value.length === 0) return;
           if (!/^[a-zA-Z\s]+$/.test(value)) {
             showFieldError(fieldName, 'Name should only contain letters and spaces');
-          } else if (value.trim().split(' ').filter(name => name.length > 0).length >= 2) {
+          } else {
             showFieldSuccess(fieldName);
           }
           break;
@@ -318,7 +315,7 @@ export default function HomePage() {
             // On blur, show required field errors if empty
             if (!value) {
               const fieldLabels = {
-                fullName: 'Please enter your full name',
+                fullName: 'Please enter your first and last name',
                 email: 'Email is required',
                 whatsapp: 'WhatsApp number is required',
                 city: 'Please enter your city name',
