@@ -186,8 +186,7 @@ export default function HomePage() {
         keepalive: true,
       }).catch(() => { /* webhook failure must never block the user */ });
 
-      // Signal Lead to Meta Pixel before navigating away
-      if ((window as any).fbq) (window as any).fbq('track', 'Lead');
+      // Meta Pixel Lead event disabled on this page
 
       // Redirect senior-experience users to thank-you2 for separate pixel tracking
       const seniorExperience = data.experience === '5-10' || data.experience === '10+';

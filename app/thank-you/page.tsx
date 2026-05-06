@@ -6,10 +6,7 @@ import s from './thank-you.module.css';
 
 export default function ThankYouPage() {
   useEffect(() => {
-    // Fire Lead conversion event — landing here = confirmed registration
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead');
-    }
+    // Meta Pixel Lead event disabled on this page
 
     const observer = new IntersectionObserver(
       (entries) => {
