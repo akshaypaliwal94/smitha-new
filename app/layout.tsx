@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: 'Ward Round Method Webinar',
     images: [
       {
-        url: '/thumbnail_4.png?v=20260410-1',
+        url: '/hero-image-new.png?v=20260511-1',
         width: 1200,
         height: 630,
         alt: 'Healthcare Communication Masterclass with Smitha Kankanala - May 17, 2026',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: 'Healthcare Communication Masterclass with Smitha Kankanala',
     description: 'Join 1000+ healthcare professionals. May 17, 2026. Reserve your free seat now!',
     creator: '@SmithaHealthcare',
-    images: ['/thumbnail_4.png?v=20260410-1'],
+    images: ['/hero-image-new.png?v=20260511-1'],
   },
   robots: {
     index: true,
