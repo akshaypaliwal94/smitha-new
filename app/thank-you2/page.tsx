@@ -45,13 +45,13 @@ export default function ThankYou2Page() {
         </p>
 
         <div className={`${s.eventBadge} ${s.reveal}`}>
-          <span>📅</span> 3rd May 2026 · <span>3:00 PM IST · Live Zoom</span>
+          <span>📅</span> 17th May 2026 · <span>3:00 PM IST · Live Zoom</span>
         </div>
 
         <p className={`${s.oneStep} ${s.reveal}`}>One last step — join the community:</p>
 
         <a
-          href="https://chat.whatsapp.com/Cns7wRnsQi12XX2ZesaDqg"
+          href="https://chat.whatsapp.com/I0B8JxOHz7zGVik3F5nWta"
           className={`${s.btnWa} ${s.reveal}`}
           onClick={() => { if ((window as any).fbq) (window as any).fbq('trackCustom', 'WhatsAppCommunityJoin'); }}
         >
@@ -77,7 +77,7 @@ export default function ThankYou2Page() {
             <div className={s.stepNumber}>2</div>
             <div className={s.stepTitle}>Save the Date</div>
             <p className={s.stepBody}>
-              Block May 3 at 3:00 PM IST on your calendar right now. This is a live session — there is no recording.
+              Block May 17 at 3:00 PM IST on your calendar right now. This is a live session — there is no recording.
             </p>
           </div>
           <div className={`${s.stepCard} ${s.reveal}`}>
@@ -99,7 +99,7 @@ export default function ThankYou2Page() {
             Get session reminders, pre-masterclass reading, and healthcare communication insights — this is where Smitha shares things she doesn&apos;t post publicly.
           </p>
           <a
-            href="https://chat.whatsapp.com/Cns7wRnsQi12XX2ZesaDqg"
+            href="https://chat.whatsapp.com/I0B8JxOHz7zGVik3F5nWta"
             className={s.btnWa}
             onClick={() => { if ((window as any).fbq) (window as any).fbq('trackCustom', 'WhatsAppCommunityJoin'); }}
           >
