@@ -6,7 +6,7 @@ export default function HomePage() {
   useEffect(() => {
     // Countdown timer functionality
     const updateCountdown = () => {
-      const targetDate = new Date('2026-05-03T15:00:00+05:30'); // May 3, 2026, 3:00 PM IST
+      const targetDate = new Date('2026-05-17T15:00:00+05:30'); // May 17, 2026, 3:00 PM IST
 
       const now = new Date().getTime();
       const distance = targetDate.getTime() - now;
@@ -1114,7 +1114,7 @@ body {
           <svg viewBox="0 0 18 18"><rect x="2" y="3" width="14" height="14" rx="2"/><line x1="13" y1="1" x2="13" y2="5"/><line x1="5" y1="1" x2="5" y2="5"/><line x1="2" y1="9" x2="16" y2="9"/></svg>
         </div>
         <div class="meta-label">Date</div>
-        <div class="meta-val">3rd May 2026</div>
+        <div class="meta-val">17th May 2026</div>
       </div>
 
       <div class="meta-card">
@@ -2127,7 +2127,7 @@ body {
   <div class="change-inner">
 
     <!-- EYEBROW -->
-    <div class="change-eyebrow">What Will Change After 3 May</div>
+    <div class="change-eyebrow">What Will Change After 17 May</div>
 
     <!-- HEADLINE -->
     <h2 class="change-headline">
@@ -2298,7 +2298,7 @@ body {
         Reserve My FREE Seat
         <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
       </a>
-      <p style="font-size:12px; color:#A0B0BC; margin-top:4px;">Live Zoom · 3 Hours · FREE · 3rd May · 3:00 PM IST</p>
+      <p style="font-size:12px; color:#A0B0BC; margin-top:4px;">Live Zoom · 3 Hours · FREE · 17th May · 3:00 PM IST</p>
     </div>
 
   </div>
@@ -2860,7 +2860,7 @@ body {
           <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
         </a>
         <div class="mentor-cta-note">
-          <strong>3 May · 3:00 PM IST</strong><br>
+          <strong>17 May · 3:00 PM IST</strong><br>
           Live Zoom · 3 Hours · FREE
         </div>
       </div>
@@ -3903,7 +3903,7 @@ body {
         </div>
         <div class="faq-a">
           <div class="faq-a-inner">
-            The webinar is 3 hours. That's what you're registering for today. CHCP — the 8-week programme — is a separate decision you make after the webinar if it's right for you. <strong>Today's commitment is FREE and 3 hours on 3 May.</strong> Nothing more is asked of you right now.
+            The webinar is 3 hours. That's what you're registering for today. CHCP — the 8-week programme — is a separate decision you make after the webinar if it's right for you. <strong>Today's commitment is FREE and 3 hours on 17 May.</strong> Nothing more is asked of you right now.
           </div>
         </div>
       </div>
@@ -4002,12 +4002,12 @@ body {
 
     <!-- BOTTOM CTA -->
     <div class="faq-cta-wrap">
-      <p class="faq-cta-label">Still have a question? <strong>It'll get answered in the live Q&A on 3 May.</strong></p>
+      <p class="faq-cta-label">Still have a question? <strong>It'll get answered in the live Q&A on 17 May.</strong></p>
       <a href="javascript:void(0)" class="btn-cta" style="max-width:400px; background:var(--teal2);" onclick="openPopup()">
         Reserve My FREE Seat
         <svg viewBox="0 0 18 18"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10,4 15,9 10,14"/></svg>
       </a>
-      <p style="font-size:12px; color:#A0B0BC; margin-top:2px;">Live Zoom · 3 Hours · FREE · 3 May · 3:00 PM IST</p>
+      <p style="font-size:12px; color:#A0B0BC; margin-top:2px;">Live Zoom · 3 Hours · FREE · 17 May · 3:00 PM IST</p>
     </div>
 
   </div>
@@ -4019,7 +4019,7 @@ body {
   <div class="popup-container">
     <div class="popup-header">
       <h2 class="popup-title">Reserve Your FREE Seat</h2>
-      <p class="popup-subtitle">Healthcare Communication Webinar • May 3 • 3:00 PM IST</p>
+      <p class="popup-subtitle">Healthcare Communication Webinar • May 17 • 3:00 PM IST</p>
       <button class="popup-close" onclick="closePopup()">&times;</button>
     </div>
     
@@ -4096,7 +4096,7 @@ body {
   <div class="sticky-cta-content">
     <div class="sticky-cta-text">
       <span class="sticky-cta-title">FREE Healthcare Communication Webinar</span>
-      <span class="sticky-cta-subtitle">May 3 • 3:00 PM IST • Only <span id="sticky-seat-count">66</span> seats left</span>
+      <span class="sticky-cta-subtitle">May 17 • 3:00 PM IST • Only <span id="sticky-seat-count">66</span> seats left</span>
     </div>
     <button class="sticky-cta-btn" onclick="openPopup()">
       <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2.5">
